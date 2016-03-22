@@ -1,3 +1,6 @@
+/**
+ * Class represents user entity
+ */
 public class User {
 
     Integer id;

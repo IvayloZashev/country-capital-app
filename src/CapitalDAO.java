@@ -2,6 +2,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Capital dao object. Defines operations to db
+ */
 public class CapitalDAO {
 
     public static List<Capital> getAllCapitals() {

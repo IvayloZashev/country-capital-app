@@ -2,6 +2,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Class that connects to db
+ */
 public class ConnectDB {
     public static Connection getConnection () {
         try {

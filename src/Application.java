@@ -1,6 +1,12 @@
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Application to providing information about countries and capitals. There are two kind of functionalities the
+ * applications provides: reviewing pairs of countries and associated capitals and inserting new pair.
+ * There are two kind of users of the application: regular user and admin. All users are permitted to perform view
+ * operation but only admin user can perform insert operation.
+ */
 public class Application {
     public static void main(String args[]) {
 

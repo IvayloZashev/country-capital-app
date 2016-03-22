@@ -1,3 +1,6 @@
+/**
+ * Class represents Capital entity
+ */
 public class Capital {
 
     Integer capitalId;
