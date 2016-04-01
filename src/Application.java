@@ -35,19 +35,19 @@ public class Application {
                     }
                     break;
                 case 2:
-                    if(loggedUser.isAdmin()) {
+                    if (loggedUser.isAdmin()) {
                         String country;
                         System.out.print("Enter name of the country: ");
                         country = input.next();
                         String capital;
                         System.out.print("Enter name of the capital: ");
                         capital = input.next();
-                        if(CapitalDAO.insertCapital(country, capital, loggedUser.getId())) {
+
+                        if (CapitalDAO.insertCapital(country, capital, loggedUser.getId())) {
                             System.out.println("Successfully insert country and capital");
                         } else {
                             System.out.println("Error inserting new country and capital");
                         }
-                        break;
                     } else {
                         System.out.println("You don't have credentials to process this operation");
                     }
@@ -56,7 +56,6 @@ public class Application {
                     System.out.println("Invalid operation");
                     break;
             }
-
         } else {
             System.out.println("Invalid username or password");
         }

@@ -7,6 +7,11 @@ import java.util.List;
  */
 public class CapitalDAO {
 
+    /**
+     * Selects all records from table capitals
+     *
+     * @return list of capitals
+     */
     public static List<Capital> getAllCapitals() {
         Connection connection = ConnectDB.getConnection();
         Statement statement = null;
@@ -49,6 +54,14 @@ public class CapitalDAO {
         return capitalList;
     }
 
+    /**
+     * Inserts new record in table capital.
+     *
+     * @param country country
+     * @param capital capital
+     * @param userId user id of the user performing the operation
+     * @return true if insert succeeds otherwise false
+     */
     public static boolean insertCapital(String country, String capital, Integer userId) {
         int result = 0;
         Connection connection = ConnectDB.getConnection();
@@ -79,6 +92,14 @@ public class CapitalDAO {
         return (result>0);
     }
 
+    /**
+     * Selects record from table users by specified first name and password. The first name is reckoned to participate
+     * in authentication by username. This method is used to check if authentication succeeds.
+     *
+     * @param userName user name
+     * @param password password
+     * @return user record or null if no data found
+     */
     public static User getUserByUNAndPassword(String userName, String password) {
         User user = null;
         Connection connection = ConnectDB.getConnection();
@@ -120,6 +141,5 @@ public class CapitalDAO {
         }
         return user;
     }
-
 
 }
