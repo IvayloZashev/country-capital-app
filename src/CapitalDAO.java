@@ -19,7 +19,7 @@ public class CapitalDAO {
         ArrayList<Capital> capitalList = new ArrayList<>();
         try {
 
-            if(connection != null) {
+            if (connection != null) {
                 statement = connection.createStatement();
                 resultSet = statement.executeQuery("SELECT * FROM capitals");
                 while (resultSet.next()) {
@@ -46,7 +46,7 @@ public class CapitalDAO {
                 if (connection != null) {
                     connection.close();
                 }
-            } catch(SQLException e){
+            } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
@@ -59,20 +59,20 @@ public class CapitalDAO {
      *
      * @param country country
      * @param capital capital
-     * @param userId user id of the user performing the operation
+     * @param userId  user id of the user performing the operation
      * @return true if insert succeeds otherwise false
      */
     public static boolean insertCapital(String country, String capital, Integer userId) {
         int result = 0;
         Connection connection = ConnectDB.getConnection();
         PreparedStatement preparedStatement = null;
-        if(connection != null) {
+        if (connection != null) {
             try {
                 preparedStatement =
                         connection.prepareStatement("INSERT INTO capitals (country, capital, user_id) values(?,?,?)");
-                        preparedStatement.setString(1, country);
-                        preparedStatement.setString(2, capital);
-                        preparedStatement.setInt(3, userId);
+                preparedStatement.setString(1, country);
+                preparedStatement.setString(2, capital);
+                preparedStatement.setInt(3, userId);
                 result = preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -89,7 +89,7 @@ public class CapitalDAO {
         } else {
             System.out.println("Error connecting");
         }
-        return (result>0);
+        return (result > 0);
     }
 
     /**
@@ -106,7 +106,7 @@ public class CapitalDAO {
         PreparedStatement preparedStatement =
                 null;
         ResultSet resultSet = null;
-        if(connection != null) {
+        if (connection != null) {
 
             try {
                 preparedStatement =
@@ -131,7 +131,7 @@ public class CapitalDAO {
                     if (preparedStatement != null) {
                         preparedStatement.close();
                     }
-                        connection.close();
+                    connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
